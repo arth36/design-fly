@@ -106,7 +106,7 @@ function wprtt_custom_blog_posttype(){
         'rewrite'                   => true,
         'capability_type'           => 'post',
         'hierarchical'              => false,
-        'supports'                  => array(
+        'supports'                   => array(
             'title',
             'editor',
             'excerpt',
@@ -121,7 +121,7 @@ function wprtt_custom_blog_posttype(){
         'exclude_from_search'       => false,
     );
 
-    register_post_type( 'blog', $args );
+    register_post_type( 'blogs', $args );
 
 }
 

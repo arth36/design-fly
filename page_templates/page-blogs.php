@@ -1,7 +1,7 @@
 <?php
 
 /*****************
-* Template Name: Blog
+* Template Name: Blogs
 */
 
 get_header();
@@ -58,7 +58,7 @@ get_header();
                     $paged = get_query_var( 'paged' ) ;
 
                     $args = array(
-                        'post_type'     => 'blog',
+                        'post_type'     => 'blogs',
                         'post_status'   => 'publish',
                         'order'       => 'asc',
                         'posts_per_page' => 5,
@@ -74,21 +74,23 @@ get_header();
 
             <div class="blog_container">
                 <div class="blog_content">
-                    <div class="blog_content_top">
-                        <div class="date">
-                            <span><p class="date_p">22</p></span>
-                            <span><p class="month_p">DEC</p></span>
+                    <a href="<?php the_permalink(); ?>">
+                        <div class="blog_content_top">
+                            <div class="date">
+                                <span><p class="date_p"><?php echo get_the_date('j'); ?></p></span>
+                                <span><p class="month_p"><?php echo get_the_date('M'); ?></p></span>
+                            </div>
+                            <div class="blog_content_title">
+                                <p><?php echo the_title(); ?></p>
+                            </div>
                         </div>
-                        <div class="blog_content_title">
-                            <p><?php echo the_title(); ?></p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
                 <div class="blog_content_bottom">
                     <img class="blog_content_img" src="<?php echo the_post_thumbnail_url(); ?>"/>
                     <div class="blog_content_right">
                         <div class="blog_content_right_top">
-                            <p class="blog_auth">by <span class="blog_author_name">Robin Sen</span> on 21Dec 2012</p>
+                            <p class="blog_auth">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on 21Dec 2012</p>
                             <p class="blog_tot_comment">12 comments</p>
                         </div>
                         <hr class="blog_content_hr"/>

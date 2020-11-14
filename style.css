@@ -677,6 +677,10 @@ hr{
     display: flex;
 }
 
+.blog_content_top:hover{
+    background-color: #ef4634;
+}
+
 .date{
     display: inline-flex;
     flex-direction: column;
