@@ -734,7 +734,7 @@ hr{
 }
 
 .blog_auth{
-    width: 84%;
+    width: 86%;
 }
 
 .blog_content_hr{
@@ -914,7 +914,7 @@ hr{
 }
 
 .comment_box{
-    width:100%;
+    width:99%;
     height: 90px;
     border: 1px solid #62585f;
 }
@@ -935,4 +935,47 @@ hr{
 .comment-input{
     border: 1px solid #62585f;
     height: 30px;
+}
+
+.form-submit{
+    padding-top: 20px;
+}
+
+.form-submit #submit{
+    float: right;
+    font-family: 'Open Sans';
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #222222;
+    border-radius: 5px;
+}
+
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+    margin: 0;
+    padding: 0;
+    width: 33.33%;
+    float: left;
+}
+
+.comment-form-author label,
+.comment-form-email label,
+.comment-form-url label {
+    margin-bottom: 15px;
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input {
+    width: 95%;
+}
+
+#comments{
+    font-family: 'Open Sans';
+}
+
+.commentlist{
+    font-family: 'Open Sans';
 }

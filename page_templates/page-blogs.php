@@ -91,7 +91,7 @@ get_header();
                     <div class="blog_content_right">
                         <div class="blog_content_right_top">
                             <p class="blog_auth">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on 21Dec 2012</p>
-                            <p class="blog_tot_comment">12 comments</p>
+                            <p class="blog_tot_comment"><?php echo get_comments_number(); ?> comments</p>
                         </div>
                         <hr class="blog_content_hr"/>
                         <div class="blog_content_right_bottom">
