@@ -574,34 +574,6 @@ hr{
     opacity: 1;
 }
 
-
-#imgcontainer {
-	width:720px;
-	margin:100px auto;
-}
-
-#imgcontainer a {
-	text-decoration:none;
-}
-
-#imgcontainer .item {
-	width: 200px; height: 200px; overflow: hidden;
-	float: left;
-	border: 10px solid #FFF;
-	margin: 10px;
-    box-shadow: 0 8px 6px -6px black;
-}
-
-
-#imgcontainer .item a { 
-    overflow: hidden;
-}
-
-#imgcontainer .item a img {
-	height: 100%; 
-	align-self: center;
-}
-
 .lightbox {
 	/** Hide the lightbox */
 	width: 0;

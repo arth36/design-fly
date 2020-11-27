@@ -96,8 +96,12 @@ get_header();
                 
                     for($j=0;$j<3;$j++){
                         $posts -> the_post();
-                        if(has_post_thumbnail()):
-                ?>
+                        ?>
+                        <div class="imgcontainer">
+                            <?php
+                            if(has_post_thumbnail()):
+                            ?>
+                        </div>
                     <img class="port_img" src="<?php echo the_post_thumbnail_url(); ?>" />
                 <?php
                 endif;
