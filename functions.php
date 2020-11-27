@@ -130,7 +130,7 @@ function wprtt_custom_blog_posttype(){
 add_action( 'init', 'wprtt_custom_blog_posttype' );
 
 
-function pietergoosen_comment_form_fields( $args = array(), $post_id = null ) {
+function wprtt_comment_form_fields( $args = array(), $post_id = null ) {
     if ( null === $post_id )
         $post_id = get_the_ID();
     else
@@ -181,4 +181,4 @@ function pietergoosen_comment_form_fields( $args = array(), $post_id = null ) {
     return $defaults;
 }
 
-add_filter('comment_form_defaults', 'pietergoosen_comment_form_fields');
+add_filter('comment_form_defaults', 'wprtt_comment_form_fields');

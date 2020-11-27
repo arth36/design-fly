@@ -535,6 +535,7 @@ hr{
     margin-top:30px;
     background-color: #62585f;
     border: 1px solid #62585f;
+    margin-bottom: 20px;
 }
 
 .vertical{
@@ -543,7 +544,7 @@ hr{
 
 .horizontal{
     display: flex;
-    margin-top:15px;
+    margin-top:8px;
 }
 
 .horizontal img{
@@ -559,13 +560,152 @@ hr{
     border-radius: 10px;
 }
 
-.port_img:not(:nth-of-type(1)){
+.imgcontainer:not(:nth-of-type(1)){
     margin-left: 15px;
+}
+
+
+.port_img:hover{
+    transform: scale(1.05);
 }
 
 .port_img.port_page:hover{
     background: rgba(0, 0, 0, 0.8);
     opacity: 1;
+}
+
+
+#imgcontainer {
+	width:720px;
+	margin:100px auto;
+}
+
+#imgcontainer a {
+	text-decoration:none;
+}
+
+#imgcontainer .item {
+	width: 200px; height: 200px; overflow: hidden;
+	float: left;
+	border: 10px solid #FFF;
+	margin: 10px;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+
+#imgcontainer .item a { 
+    overflow: hidden;
+}
+
+#imgcontainer .item a img {
+	height: 100%; 
+	align-self: center;
+}
+
+.lightbox {
+	/** Hide the lightbox */
+	width: 0;
+    height: 0;
+    overflow: hidden;
+	
+	/** Apply basic lightbox styling */
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+	color:#333333;
+	transition: width .5s ease-in-out, height .5s ease-in-out;
+    background: rgba(0,0,0,.2);
+}
+
+/** Show lightbox when it is target */
+.lightbox:target {
+  width: 100%;
+  height: 100%;
+	transition: width .5s ease-in-out, height .5s ease-in-out;
+}
+
+.lightbox .box {
+  	width: -webkit-min-content;
+  	width: -moz-min-content;
+  	width: min-content;
+    min-width:400px;
+    height:300px;
+ 	margin: 15% auto;
+	padding:20px 20px 20px 20px;
+	background-color:#FFF;
+	box-shadow: 0px 1px 26px -3px #777777;
+    position: relative;
+    z-index: 2;
+}
+
+.lightbox .title {
+	margin:0;
+	padding:0 0 10px 0px;
+    font-size:22px;
+    text-align: center;
+}
+
+.lightbox .content {
+	display:block;
+	position:relative;
+}
+	
+
+.lightbox .content .desc {
+	z-index:99;
+	bottom:0;
+	position:absolute;
+	padding:10px;
+	margin:0 0 4px 0;
+	background:rgba(0,0,0,0.8);
+	color:#fff;
+	font-size:17px;
+	opacity:0;
+	text-align: left;
+	transition: opacity ease-in-out 0.5s;
+	}	
+	
+.lightbox .content:hover .desc	{
+	opacity:1;
+}
+
+.lightbox .close {
+	display:block;
+	text-decoration:none;
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:22px;
+	color:#858585;
+}
+
+.prev {
+	float:left;
+}
+
+.next, .close {
+	float:right;
+}
+	
+.clear {
+	display:block;
+	clear:both;
+}
+
+.close_out {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.lightbox_img{
+    width: 400px;
+    height: 225px;
+    border-radius: 5px;
+    margin:10px 0px;
 }
 
 /* = Footer CSS
@@ -722,6 +862,10 @@ hr{
     margin-right: 20px;
 }
 
+.blog_content_img:hover{
+    transform: scale(1.1);
+}
+
 .blog_content_right{
     width:100%;
 }
@@ -802,6 +946,10 @@ hr{
 
 .blog_right_portfolio_img:not(:nth-of-type(1)){
     margin-left: 15px;
+}
+
+.blog_right_portfolio_img:hover{
+    transform: scale(1.3);
 }
 
 .blog_right_popular_posts{
