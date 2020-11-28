@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <hr/>
-                <p class="footer-copyright">&#169; <?php echo get_option('wprtt_footer_copyright'); ?> | Designed by <a href=""><span style="color:#ef4634;">rtCamp</span></p></a>
+                <p class="footer-copyright">&#169; <?php echo get_option('wprtt_footer_copyright'); ?> | Designed by <a href="https://rtcamp.com/"><span style="color:#ef4634;">rtCamp</span></p></a>
             </div>
         </div>
     </body>
