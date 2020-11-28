@@ -42,6 +42,7 @@ get_header();
             if(have_posts()):
                 while(have_posts()):
                     the_post();
+                    wprtt_save_post_views( get_the_ID() );
         ?>
         <div class="single_blog_wrapper">
             <p class="single-blog-title"><?php echo the_title(); ?></p>
@@ -101,14 +102,59 @@ get_header();
             <div class="blog_right_popular_posts">
                 <p class="blog_right_popular_posts_title">Popular Posts</p>
                 <hr class="popular_post_hr"/>
+                <?php
+                        $args = array(
+                            'post_type'     => 'blogs',
+                            'post_status'   => 'publish',
+                            'meta_key'      => 'wprtt_post_views',
+                            'orderby'       => 'meta_value_num',
+                            'order'         => 'DESC'
+                        );
+                        $posts = new WP_QUERY($args);
+                        if ( $posts -> have_posts() ) :
+                            for($i=0; $i<=4; $i++){
+                                $posts -> the_post();
+                    ?>
                 <div class="blog_right_popular_posts_container">
-                    <img class="popular_posts_img" src="<?php echo get_stylesheet_directory_uri(); ?>/images/image-1.png"/>
+                    <img class="popular_posts_img" src="<?php echo the_post_thumbnail_url(); ?>" />
                     <div class="popular_posts_content">
-                        <p class="popular_posts_content_upper">Archieve your grandest dreams!</p>
-                        <p class="popular_posts_content_lower">by <span class="blog_author_name">Robin Sen</span> on 21Dec 2012</p>
+                        <p class="popular_posts_content_upper"><?php the_title() ?></p>
+                        <p class="popular_posts_content_lower">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on <?php echo get_the_date('j M Y'); ?></p>
                     </div>
                 </div>
+                <?php
+                        }
+                    endif;
+                ?>
             </div>
+
+            <div class="blog_right_popular_posts">
+                <p class="blog_right_popular_posts_title">Recent Posts</p>
+                <hr class="popular_post_hr"/>
+                <?php
+                        $args = array(
+                            'post_type'     => 'blogs',
+                            'post_status'   => 'publish',
+                            'order'         => 'DESC'
+                        );
+                        $posts = new WP_QUERY($args);
+                        if ( $posts -> have_posts() ) :
+                            for($i=0; $i<=4; $i++){
+                                $posts -> the_post();
+                    ?>
+                <div class="blog_right_popular_posts_container">
+                    <img class="popular_posts_img" src="<?php echo the_post_thumbnail_url(); ?>" />
+                    <div class="popular_posts_content">
+                        <p class="popular_posts_content_upper"><?php the_title() ?></p>
+                        <p class="popular_posts_content_lower">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on <?php echo get_the_date('j M Y'); ?></p>
+                    </div>
+                </div>
+                <?php
+                            }
+                        endif;
+                ?>
+            </div>
+
     </div>
 </div>
 

@@ -182,3 +182,16 @@ function wprtt_comment_form_fields( $args = array(), $post_id = null ) {
 }
 
 add_filter('comment_form_defaults', 'wprtt_comment_form_fields');
+
+function wprtt_save_post_views( $postID ) {
+    $metaKey = 'wprtt_post_views';
+    $views = get_post_meta( $postID, $metaKey, true );
+
+    $count = ( empty( $views ) ? 1 : $views );
+
+    $count++;
+
+    update_post_meta( $postID, $metaKey, $count );
+
+}
+remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

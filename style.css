@@ -939,6 +939,7 @@ hr{
 
 .blog_right_popular_posts{
     font-family: 'Open Sans';
+    padding-bottom: 40px;
 }
 
 .blog_right_popular_posts_title{
@@ -959,6 +960,11 @@ hr{
 
 .blog_right_popular_posts_container{
     display: flex;
+    padding-bottom: 10px;
+}
+
+.blog_right_portfolio_img_container{
+    padding-top: 1px;
 }
 
 .popular_posts_content{
