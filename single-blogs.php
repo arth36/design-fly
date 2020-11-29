@@ -10,8 +10,8 @@ get_header();
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-1.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Advertising</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Advertising', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -19,8 +19,8 @@ get_header();
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-2.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Multimedia</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Multimedia', 'wprtt') ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -28,8 +28,8 @@ get_header();
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-3.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Photography</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Photography', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
         </div>    
@@ -46,14 +46,14 @@ get_header();
         ?>
         <div class="single_blog_wrapper">
             <p class="single-blog-title"><?php echo the_title(); ?></p>
-            <p class="single-blog-title-bottom">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on <?php echo the_date('j M Y'); ?></p>
+            <p class="single-blog-title-bottom"><?php echo __('by', 'wprtt'); ?> <span class="blog_author_name"><?php echo get_the_author(); ?></span> <?php echo __('on', 'wprtt'); ?> <?php echo the_date('j M Y'); ?></p>
             <hr class="single-blog-title-bottom-hr"/>
             <div class="single-blog-disc"><?php echo the_content(); ?></div>
             <p class="single-blog-tags">
-                TAGS: <span class="blog-tags"><?php the_tags( '',' , ','' ); ?></span>
+                <?php echo __('TAGS:', 'wprtt'); ?> <span class="blog-tags"><?php the_tags( '',' , ','' ); ?></span>
             </p>
             <hr/>
-            <p class="comments-own-title">Comments</p>
+            <p class="comments-own-title"><?php echo __('Comments', 'wprtt'); ?></p>
             <hr/>
             <?php comments_template(); ?>
         </div>
@@ -61,7 +61,7 @@ get_header();
 
         <div class="blog_right">
             <div class="blog_right_portfolio">
-                <p class="blog_right_portfolio_title">Portfolio</p>
+                <p class="blog_right_portfolio_title"><?php echo __('Portfolio', 'wprtt'); ?></p>
                 <hr/>
                 <div class="blog_right_portfolio_img_container">
                     <?php
@@ -100,7 +100,7 @@ get_header();
             </div>
 
             <div class="blog_right_popular_posts">
-                <p class="blog_right_popular_posts_title">Popular Posts</p>
+                <p class="blog_right_popular_posts_title"><?php echo __('Popular Posts', 'wprtt'); ?></p>
                 <hr class="popular_post_hr"/>
                 <?php
                         $args = array(
@@ -119,7 +119,7 @@ get_header();
                     <img class="popular_posts_img" src="<?php echo the_post_thumbnail_url(); ?>" />
                     <div class="popular_posts_content">
                         <p class="popular_posts_content_upper"><?php the_title() ?></p>
-                        <p class="popular_posts_content_lower">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on <?php echo get_the_date('j M Y'); ?></p>
+                        <p class="popular_posts_content_lower"><?php echo __('by', 'wprtt'); ?> <span class="blog_author_name"><?php echo get_the_author(); ?></span> <?php echo __('on', 'wprtt'); ?> <?php echo get_the_date('j M Y'); ?></p>
                     </div>
                 </div>
                 <?php
@@ -129,7 +129,7 @@ get_header();
             </div>
 
             <div class="blog_right_popular_posts">
-                <p class="blog_right_popular_posts_title">Recent Posts</p>
+                <p class="blog_right_popular_posts_title"><?php echo __('Recent Posts', 'wprtt'); ?></p>
                 <hr class="popular_post_hr"/>
                 <?php
                         $args = array(
@@ -146,7 +146,7 @@ get_header();
                     <img class="popular_posts_img" src="<?php echo the_post_thumbnail_url(); ?>" />
                     <div class="popular_posts_content">
                         <p class="popular_posts_content_upper"><?php the_title() ?></p>
-                        <p class="popular_posts_content_lower">by <span class="blog_author_name"><?php echo get_the_author(); ?></span> on <?php echo get_the_date('j M Y'); ?></p>
+                        <p class="popular_posts_content_lower"><?php echo __('by', 'wprtt'); ?> <span class="blog_author_name"><?php echo get_the_author(); ?></span> <?php echo __('on', 'wprtt'); ?> <?php echo get_the_date('j M Y'); ?></p>
                     </div>
                 </div>
                 <?php

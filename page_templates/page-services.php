@@ -16,8 +16,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-1.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Advertising</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Advertising', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -25,8 +25,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-2.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Multimedia</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Multimedia', 'wprtt') ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -34,8 +34,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-3.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Photography</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Photography', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
         </div>    

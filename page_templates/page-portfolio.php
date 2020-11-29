@@ -16,8 +16,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-1.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Advertising</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Advertising', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -25,8 +25,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-2.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Multimedia</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Multimedia', 'wprtt') ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
             <div class="col">
@@ -34,8 +34,8 @@
                     <img class="thumbnail" src="<?php echo get_stylesheet_directory_uri(); ?>/images/feature-icons-3.png" />
                 </div>
                 <div class="col_content">
-                    <h2>Photography</h1>
-                    <p>Neque porro quisquam est, dolorem ipsum quia dolor hollo...</p>
+                    <h2><?php echo __('Photography', 'wprtt'); ?></h2>
+                    <p><?php echo __('Neque porro quisquam est, dolorem ipsum quia dolor hollo...', 'wprtt'); ?></p>
                 </div>
             </div>
         </div>    
@@ -46,7 +46,7 @@
     <div class="container-wrapper">
         <div class="portfolio_upper">
             <div class="portfolio_upper_left">
-                <p class="portfolio_upper_title">D'SIGN IS THE SOUL</p>
+                <p class="portfolio_upper_title"><?php echo __('D\'SIGN IS THE SOUL', 'wprtt'); ?></p>
             </div>
         </div>
         <hr class="other_hr"/>
@@ -87,7 +87,7 @@
                     <div class="lightbox" id="img<?php echo $k; ?>">
                         <a class="close_out" href="#"></a>
                         <div class="box">
-	                        <a class="close" href="#">X</a>
+	                        <a class="close" href="#"><?php echo __('X', 'wprtt'); ?></a>
                             <p class="title"></p>
                             <div class="content">
                             	<img class="lightbox_img" src="<?php echo the_post_thumbnail_url(); ?>"/> 
@@ -118,7 +118,7 @@
             else:
         ?>
                 <div>
-                    <h1>No Portfolio Found.</h1>
+                    <h1><?php echo __('No Portfolio Found.', 'wprtt'); ?></h1>
                 </div>
         <?php
             endif;

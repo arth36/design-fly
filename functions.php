@@ -16,14 +16,16 @@ include get_template_directory() . '/inc/wprtt_custom_option.php';
 
 function wprtt_scripts(){
     wp_enqueue_style( 'wprtt-basic-style', get_stylesheet_uri() ); // this is our style.css which has design of our website.
+    wp_enqueue_style( 'wprtt-responsive-style', get_template_directory_uri().'/css/theme-responsive.css' ); // this css file is responsible for responsive website
+    wp_enqueue_script( 'custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery') ); // this file is responsible for show toggle when particular condition occurs
 }
 add_action( 'wp_enqueue_scripts', 'wprtt_scripts' );
 
-function wpshp_theme_setup() { 
+function wprtt_theme_setup() { 
     add_theme_support( 'post-thumbnails'); 
     add_post_type_support( 'page', 'excerpt' );
 } 
-add_action( 'after_setup_theme', 'wpshp_theme_setup' ); 
+add_action( 'after_setup_theme', 'wprtt_theme_setup' ); 
 
 /******************************
   * Custom Portfolio Post Type
@@ -32,18 +34,18 @@ add_action( 'after_setup_theme', 'wpshp_theme_setup' );
 function wprtt_custom_portfolio_posttype(){
 
     $labels = array(
-        'name'                    => 'Portfolio',
-        'singular_name'           => 'Portfolio',
-        'add_new'                 => 'Add Item',
-        'all_items'               => 'All Items',
-        'add_new_item'            => 'Add item',
-        'edit_item'               => 'Edit Item',
-        'new_item'                => 'New Item',
-        'view_item'               => 'View Item',       
-        'search_item'             => 'Search Item',
-        'not_found'               => 'No Items Found',
-        'not_found_in_trash'      => 'No Items Found In Trash',
-        'parent_item_colon'       => 'Parent Item',
+        'name'                    =>    __('Portfolio','wprtt'),
+        'singular_name'           =>    __('Portfolio','wprtt'),
+        'add_new'                 =>    __('Add Item','wprtt'),
+        'all_items'               =>    __('All Items','wprtt'),
+        'add_new_item'            =>    __('Add item','wprtt'),
+        'edit_item'               =>    __('Edit Item','wprtt'),
+        'new_item'                =>    __('New Item','wprtt'),
+        'view_item'               =>    __('View Item','wprtt'),       
+        'search_item'             =>    __('Search Item','wprtt'),
+        'not_found'               =>    __('No Items Found','wprtt'),
+        'not_found_in_trash'      =>    __('No Items Found In Trash','wprtt'),
+        'parent_item_colon'       =>    __('Parent Item','wprtt'),
     );
 
     $args = array(
@@ -84,18 +86,18 @@ add_action( 'init', 'wprtt_custom_portfolio_posttype' );
 function wprtt_custom_blog_posttype(){
 
     $labels = array(
-        'name'                    => 'Blogs',
-        'singular_name'           => 'Blog',
-        'add_new'                 => 'Add Blog',
-        'all_items'               => 'All Blogs',
-        'add_new_item'            => 'Add BLog',
-        'edit_item'               => 'Edit Blog',
-        'new_item'                => 'New Blog',
-        'view_item'               => 'View Blog',       
-        'search_item'             => 'Search Blog',
-        'not_found'               => 'No Blogs Found',
-        'not_found_in_trash'      => 'No Blogs Found In Trash',
-        'parent_item_colon'       => 'Parent Blog',
+        'name'                    =>    __('Blogs','wprtt'),
+        'singular_name'           =>    __('Blog','wprtt'),
+        'add_new'                 =>    __('Add Blog','wprtt'),
+        'all_items'               =>    __('All Blogs','wprtt'),
+        'add_new_item'            =>    __('Add Blog','wprtt'),
+        'edit_item'               =>    __('Edit Blog','wprtt'),
+        'new_item'                =>    __('New Blog','wprtt'),
+        'view_item'               =>    __('View Blog','wprtt'),
+        'search_item'             =>    __('Search Blog','wprtt'),
+        'not_found'               =>    __('No Blogs Found','wprtt'),
+        'not_found_in_trash'      =>    __('No Blogs Found In Trash','wprtt'),
+        'parent_item_colon'       =>    __('Parent Blog','wprtt'),
     );
 
     $args = array(
@@ -168,14 +170,14 @@ function wprtt_comment_form_fields( $args = array(), $post_id = null ) {
     $defaults = array(
         'fields'               => $fields,
         'comment_field'        => '<textarea class="comment_box" id="comment" name="comment"  cols="100%" rows="8" aria-required="true"></textarea>',
-        'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'pietergoosen' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-        'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'pietergoosen' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+        'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.', 'wprtt' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
+        'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>', 'wprtt' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
         'id_form'              => 'commentform',
         'id_submit'            => 'submit',
-        'title_reply'          => __( 'Post your comment', 'pietergoosen' ),
-        'title_reply_to'       => __( 'Post a Comment to %s', 'pietergoosen' ),
-        'cancel_reply_link'    => __( 'Cancel reply', 'pietergoosen' ),
-        'label_submit'         => __( 'Submit', 'pietergoosen' ),
+        'title_reply'          => __( 'Post your comment', 'wprtt' ),
+        'title_reply_to'       => __( 'Post a Comment to %s', 'wprtt' ),
+        'cancel_reply_link'    => __( 'Cancel reply', 'wprtt' ),
+        'label_submit'         => __( 'Submit', 'wprtt' ),
         'format'               => 'xhtml',
         );
     return $defaults;
@@ -183,15 +185,15 @@ function wprtt_comment_form_fields( $args = array(), $post_id = null ) {
 
 add_filter('comment_form_defaults', 'wprtt_comment_form_fields');
 
-function wprtt_save_post_views( $postID ) {
+function wprtt_save_post_views( $post_id ) {
     $metaKey = 'wprtt_post_views';
-    $views = get_post_meta( $postID, $metaKey, true );
+    $views = get_post_meta( $post_id, $metaKey, true );
 
     $count = ( empty( $views ) ? 1 : $views );
 
     $count++;
 
-    update_post_meta( $postID, $metaKey, $count );
+    update_post_meta( $post_id, $metaKey, $count );
 
 }
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);

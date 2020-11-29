@@ -958,6 +958,10 @@ hr{
     margin-right: 10px;
 }
 
+.popular_posts_img:hover{
+    transform: scale(1.3);
+}
+
 .blog_right_popular_posts_container{
     display: flex;
     padding-bottom: 10px;
