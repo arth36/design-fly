@@ -14,7 +14,7 @@
                                 $posts -> the_post();
                         ?>
 
-                        <p class="footer-top-title"><?php echo get_the_title() ?></p>
+                        <a href="<?php the_permalink(); ?>"><p class="footer-top-title"><?php echo get_the_title() ?></p></a>
                         <p class="footer-top-para"><?php echo get_the_excerpt(); ?></p>
                         <a href="<?php the_permalink(); ?>"><p class="footer-top-left-para-readmore"><?php echo __('Read more', 'wprtt'); ?></p></a>
                         <?php

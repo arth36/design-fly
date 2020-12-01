@@ -13,6 +13,12 @@
   
 include get_template_directory() . '/inc/wprtt_custom_option.php';
 
+include get_template_directory() . '/widgets/wprtt-portfolio-widget.php';
+
+include get_template_directory() . '/widgets/wprtt-popular-posts-widget.php';
+
+include get_template_directory() . '/widgets/wprtt-recent-posts-widget.php';
+
 
 function wprtt_scripts(){
     wp_enqueue_style( 'wprtt-basic-style', get_stylesheet_uri() ); // this is our style.css which has design of our website.
@@ -197,3 +203,20 @@ function wprtt_save_post_views( $post_id ) {
 
 }
 remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function wprtt_widget_setup(){
+
+    register_sidebar( array(
+            'name'          =>  'Sidebar',
+            'id'            =>  'sidebar-1',
+            'class'         =>  'custom',
+            'description'   =>  'Standard Sidebar',
+            'before_widget' =>  '<aside id="%1$s" class="widget %2$s>',
+            'after_widget'  =>  '</aside>',
+            'before_title'  =>  '<h1 class="widget-title">',
+            "after_widget"  =>  '</h1>',
+        ) 
+    );
+
+}
+add_action( 'widgets_init', 'wprtt_widget_setup' );
