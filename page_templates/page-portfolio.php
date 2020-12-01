@@ -42,7 +42,7 @@
     </div>
 </div>
 
-<div class="portfolio_section">
+<div class="portfolio_section" id="portfolio_section">
     <div class="container-wrapper">
         <div class="portfolio_upper">
             <div class="portfolio_upper_left">
@@ -54,15 +54,18 @@
 
             $paged = get_query_var( 'paged' ) ;
 
+            $post_per_page = 15;
+
             $args = array(
                 'post_type'     => 'portfolio',
                 'post_status'   => 'publish',
                 'order'       => 'asc',
-                'posts_per_page' => 15,
+                'posts_per_page' => $post_per_page,
                 'paged' => $paged, 
             );
             $posts = new WP_QUERY($args);
             $count = count(get_posts($args));
+            
             if ( $posts -> have_posts() ) :
         ?>
         <div class="vertical">
@@ -85,14 +88,24 @@
                     </div>
 
                     <div class="lightbox" id="img<?php echo $k; ?>">
-                        <a class="close_out" href="#"></a>
+                        <a class="close_out" href="#portfolio_section"></a>
                         <div class="box">
-	                        <a class="close" href="#"><?php echo __('X', 'wprtt'); ?></a>
-                            <p class="title"></p>
+	                        <a class="close" href="#portfolio_section"><?php echo __('X', 'wprtt'); ?></a>
+                            <br/>
                             <div class="content">
                             	<img class="lightbox_img" src="<?php echo the_post_thumbnail_url(); ?>"/> 
                             </div>
-                            <p class="title"><?php echo the_title(); ?></p>
+                            <div class="title_container">
+                            <a class="prev_button" href="#img<?php echo $k-1; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/prev.png" /></a>
+                                <p class="title"><?php echo the_title(); ?></p>
+                                <?php 
+                                    if(! ($k % $count) == 0){
+                                        ?>
+                                        <a class="next_button" href="#img<?php echo $k+1; ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/next.png" /></a>
+                                    <?php
+                                    }
+                                ?>
+                            </div>
                         </div>
                     </div>
                     

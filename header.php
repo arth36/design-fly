@@ -26,6 +26,7 @@
     <body <?php body_class(); ?>>
         <div class="header">
             <div class ="container-wrapper">
+                <a href="<?php echo get_home_url(); ?>">
                 <div class="logo">
                     <?php if ( get_option( 'wprtt_edit_header_logo' ) ) : ?>
                         <img src="<?php echo get_option( 'wprtt_edit_header_logo' ); ?>" />
@@ -33,6 +34,7 @@
                         <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.png" alt="<?php bloginfo('name'); ?>" width="100" height="50" />
                     <?php endif; ?>
                 </div>
+                </a>
                 <div class="header_right">
                     <!-- toggle -->       		              
                     <div class="toggle">

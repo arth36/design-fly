@@ -3,9 +3,23 @@
                 <hr/>
                 <div class="footer-content">
                     <div class="footer-top">
-                        <p class="footer-top-title"><?php echo __('Welcome to D\'SIGN', 'wprtt'); ?><i><?php echo __('fly', 'wprtt'); ?></i></p>
-                        <p class="footer-top-para"><?php echo __('Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam. sed do eiusmod tempor incididunt ut labore et.', 'wprtt'); ?></p>
-                        <a href=""><p class="footer-top-left-para-readmore"><?php echo __('Read more', 'wprtt'); ?></p></a>
+                        <?php
+                            $args = array(
+                                'post_type'     => 'blogs',
+                                'post_status'   => 'publish',
+                                'order'       => 'DESC',
+                            );
+                            $posts = new WP_QUERY($args);
+                            if ( $posts -> have_posts() ) :
+                                $posts -> the_post();
+                        ?>
+
+                        <p class="footer-top-title"><?php echo get_the_title() ?></p>
+                        <p class="footer-top-para"><?php echo get_the_excerpt(); ?></p>
+                        <a href="<?php the_permalink(); ?>"><p class="footer-top-left-para-readmore"><?php echo __('Read more', 'wprtt'); ?></p></a>
+                        <?php
+                            endif;
+                        ?>
                     </div>
                     <div class="footer-top">
                         <p class="footer-top-title"><?php echo __('Contact Us', 'wprtt'); ?></p>
