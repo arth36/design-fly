@@ -62,17 +62,16 @@ For Demo click [`here`]( https://inconceivable-glanc.000webhostapp.com/ )
 
 `Front Page`:-
 
-![Front page](https://imgur.com/o9ssSXK.png)
+![Front page](https://i.imgur.com/RYNha90.png)
 
 `Portfolio Page`:-
 
-![Portfolio page](https://imgur.com/Lk7Jb0g.png)
+![Portfolio page](https://imgur.com/Dag2tk4.png)
 
 `Blogs Page`:-
 
-![Blog page](https://imgur.com/5t1VIiE.png)
+![Blog page](https://imgur.com/7yI6bwv.png)
 
 `Single Blog Page`:-
 
-![Portfolio page](https://imgur.com/GU7jWWX.png)
-
+![Portfolio page](https://imgur.com/yUdze2G.png)
