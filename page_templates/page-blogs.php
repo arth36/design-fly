@@ -111,7 +111,7 @@ get_header();
                             <img class="lightbox_img" src="<?php echo the_post_thumbnail_url(); ?>"/> 
                         </div>
                         <div class="title_container">
-                            <p class="title"><?php echo the_title(); ?></p>
+                            <a class="title" id="light-box-title" href="<?php the_permalink(); ?>"><p><?php echo the_title(); ?></p></a>
                         </div>                
                     </div>
                 </div>
