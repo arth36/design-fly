@@ -45,9 +45,15 @@
                     </div>
                     <!-- sitenav -->
                     <div class="sitenav">                  
-                        <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>  
+                        <?php wp_nav_menu( array('theme_location' => 'primary') ); ?>
+                        <div class="search-form-container">
+                            <?php get_search_form(); ?>
+                        </div>
                         <!-- end sitenav -->
                     </div>
+                    <div class="mobile-search-form-container">
+                            <?php get_search_form(); ?>
+                        </div>
                     <div class="clear"></div>   
                     <!-- end header_right --> 
                     </div> 

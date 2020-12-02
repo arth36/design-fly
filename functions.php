@@ -29,6 +29,7 @@ add_action( 'wp_enqueue_scripts', 'wprtt_scripts' );
 
 function wprtt_theme_setup() { 
     add_theme_support( 'post-thumbnails'); 
+    add_theme_support( 'html5', array('search-form') );
     add_post_type_support( 'page', 'excerpt' );
 } 
 add_action( 'after_setup_theme', 'wprtt_theme_setup' ); 

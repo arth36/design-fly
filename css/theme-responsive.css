@@ -259,6 +259,24 @@
     .sitenav ul li.current_page_item a{
         background-color:transparent !important;
     }
+
+    .search-form-container{
+        display: none;
+    }
+
+    .mobile-search-form-container{
+        display: block;
+    }
+
+    .mobile-search-form-container input{
+        width: 80%;
+        height: 30px;
+    }
+
+    .mobile-search-form-container button{
+        width: 19%;
+        height: 30px;
+    }
     /* ------ Extra ------ */
    
     #sitemain iframe {
@@ -498,7 +516,7 @@
     }
 
     .container-wrapper .banner-disc{
-        font-size: 14px;
+        font-size: 12px;
     }
     
 }
